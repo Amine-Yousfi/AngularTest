@@ -1,4 +1,4 @@
-export class Parite {
+export class Partie {
   id!: number;
   nb_joueurs!: number;
   desc!: string;
