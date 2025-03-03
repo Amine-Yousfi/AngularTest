@@ -1,0 +1,45 @@
+<h2>Gestion des Parties</h2>
+
+<!-- Formulaire pour créer/mettre à jour -->
+<form (ngSubmit)="savePartie()">
+  <div>
+    <label>Nombre de joueurs:</label>
+    <input type="number" [(ngModel)]="selectedPartie.nb_joueurs" name="nb_joueurs" required>
+  </div>
+  <div>
+    <label>Description:</label>
+    <input type="text" [(ngModel)]="selectedPartie.desc" name="desc" required>
+  </div>
+  <div>
+    <label>Status:</label>
+    <input type="checkbox" [(ngModel)]="selectedPartie.status" name="status">
+  </div>
+  <button type="submit">{{ isEditing ? 'Mettre à jour' : 'Créer' }}</button>
+  <button type="button" (click)="resetForm()">Annuler</button>
+</form>
+
+<!-- Liste des parties -->
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre de joueurs</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let partie of parties">
+      <td>{{ partie.id }}</td> <!-- Affiche l'ID comme un nombre -->
+      <td>{{ partie.nb_joueurs }}</td>
+      <td>{{ partie.desc }}</td>
+      <td>{{ partie.status ? 'Actif' : 'Inactif' }}</td>
+      <td>
+        <button (click)="editPartie(partie)">Modifier</button>
+        <button (click)="deletePartie(partie.id)">Supprimer</button>
+        <a [routerLink]="['/parties', partie.id]">Voir Détails</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

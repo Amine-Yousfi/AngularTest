@@ -1,0 +1,8 @@
+<h2>Détails de la Partie</h2>
+<div *ngIf="partie">
+  <p>ID: {{ partie.id }}</p>
+  <p>Nombre de joueurs: {{ partie.nb_joueurs }}</p>
+  <p>Description: {{ partie.desc }}</p>
+  <p>Status: {{ partie.status ? 'Actif' : 'Inactif' }}</p>
+  <button (click)="deletePartie(partie.id)">Supprimer</button>
+</div>
