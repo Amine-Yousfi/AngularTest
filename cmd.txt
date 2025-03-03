@@ -1,0 +1,7 @@
+ng g c components/component_name //créer un component dans le dossier components
+
+ng generate service mon-service //Tu peux générer un service
+
+npm install -g json-server //installer JSON server
+
+json-server --watch db.json  //démarrer le serveur 
