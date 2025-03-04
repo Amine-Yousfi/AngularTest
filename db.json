@@ -1,19 +1,19 @@
 {
   "parties": [
     {
-      "id": 1,
+      "id": "1",
       "nb_joueurs": 4,
       "desc": "Partie de jeu de société",
       "status": true
     },
     {
-      "id": 2,
+      "id": "2",
       "nb_joueurs": 6,
       "desc": "Tournoi de cartes",
       "status": false
     },
     {
-      "id": 3,
+      "id": "3",
       "nb_joueurs": 10,
       "desc": "Match de stratégie",
       "status": true
